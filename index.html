@@ -4,7 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OUR Plan's | OSIS Planner</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- Header -->
@@ -26,41 +33,44 @@
   <section id="mingguan">
     <h2>📅 Rencana Mingguan</h2>
     <div class="plan-list">
-      <div class="plan-item">
-        <h3>Kegiatan: Rapat OSIS</h3>
+      <div class="plan-item terlaksana">
+        <h3>Rapat OSIS</h3>
         <p>Tanggal: 5 November 2025</p>
-        <p>Status: <span class="status">Terlaksana ✅</span></p>
+        <p class="status">Terlaksana ✅</p>
       </div>
-      <div class="plan-item">
-        <h3>Kegiatan: Latihan Upacara</h3>
+      <div class="plan-item belum">
+        <h3>Latihan Upacara</h3>
         <p>Tanggal: 8 November 2025</p>
-        <p>Status: <span class="status">Belum Terlaksana ❌</span></p>
+        <p class="status">Belum Terlaksana ❌</p>
       </div>
     </div>
+    <button class="add-btn">➕ Tambah Kegiatan</button>
   </section>
 
   <!-- Bagian Bulanan -->
   <section id="bulanan">
     <h2>🗂️ Rencana Bulanan</h2>
     <div class="plan-list">
-      <div class="plan-item">
-        <h3>Kegiatan: Bakti Sosial</h3>
+      <div class="plan-item belum">
+        <h3>Bakti Sosial</h3>
         <p>Bulan: November 2025</p>
-        <p>Status: <span class="status">Belum Terlaksana ❌</span></p>
+        <p class="status">Belum Terlaksana ❌</p>
       </div>
     </div>
+    <button class="add-btn">➕ Tambah Kegiatan</button>
   </section>
 
   <!-- Bagian Tahunan -->
   <section id="tahunan">
     <h2>🎯 Rencana Tahunan</h2>
     <div class="plan-list">
-      <div class="plan-item">
-        <h3>Kegiatan: LDKS (Latihan Dasar Kepemimpinan Siswa)</h3>
+      <div class="plan-item terlaksana">
+        <h3>LDKS (Latihan Dasar Kepemimpinan Siswa)</h3>
         <p>Tahun: 2025</p>
-        <p>Status: <span class="status">Terlaksana ✅</span></p>
+        <p class="status">Terlaksana ✅</p>
       </div>
     </div>
+    <button class="add-btn">➕ Tambah Kegiatan</button>
   </section>
 
   <!-- Footer -->
@@ -68,5 +78,7 @@
     <p>Made with 💙 by OSIS | OUR Plan's 2025</p>
   </footer>
 
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
