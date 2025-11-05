@@ -1,131 +1,82 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>OUR Plan's | POSMAR 25/26</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OUR Plan’s | POSMAR</title>
 
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- Decorative background SVG (clouds & tiny planet) -->
-  <svg class="bg-decor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-    <defs>
-      <linearGradient id="g1" x1="0" x2="1">
-        <stop offset="0" stop-color="#dff2ff"/>
-        <stop offset="1" stop-color="#f0fbff"/>
-      </linearGradient>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#g1)"></rect>
-
-    <!-- soft cloud shapes -->
-    <g id="clouds" opacity="0.18" fill="#ffffff">
-      <ellipse cx="12%" cy="18%" rx="140" ry="40"/>
-      <ellipse cx="24%" cy="14%" rx="90" ry="30"/>
-      <ellipse cx="78%" cy="12%" rx="120" ry="36"/>
-      <ellipse cx="88%" cy="26%" rx="70" ry="22"/>
-    </g>
-
-    <!-- little planet -->
-    <g transform="translate(85%,78%)" opacity="0.12" fill="#fff3b8">
-      <circle cx="0" cy="0" r="70"></circle>
-      <ellipse cx="-5" cy="10" rx="35" ry="12" fill="#ffd" opacity="0.7"/>
-    </g>
-  </svg>
-
   <!-- Header -->
-  <header class="site-header">
-    <div class="header-left">
-      <!-- LOGO POSMAR (use the provided PNG file in same folder) -->
-      <img src="LOGO POSMAR.png" alt="Logo POSMAR" class="logo-img" />
-      <div>
-        <h1>OUR Plan's <span class="tag-emo">🗓️</span></h1>
-        <p class="subtitle">Rencana Kerja OSIS — Mingguan • Bulanan • Tahunan</p>
-      </div>
+  <header>
+    <div class="header-logo">
+      <img src="LOGO POSMAR.png" alt="Logo POSMAR" class="logo-posmar">
+      <h1>OUR Plan’s 🗓️</h1>
     </div>
+    <p>Rencana Kerja OSIS Mingguan, Bulanan, dan Tahunan</p>
+  </header>
 
-  <!-- Navigation -->
-  <nav class="site-nav" role="navigation" aria-label="Navigasi utama">
+  <!-- Navigasi -->
+  <nav>
     <ul>
       <li><a href="#mingguan">Mingguan</a></li>
       <li><a href="#bulanan">Bulanan</a></li>
       <li><a href="#tahunan">Tahunan</a></li>
-      <li class="hint">Klik teks pada card untuk <em>edit</em> ✏️</li>
     </ul>
   </nav>
 
-  <!-- Main content -->
-  <main>
-    <!-- Section templates -->
-    <section id="mingguan" class="planner-section">
-      <h2>📅 Rencana Mingguan</h2>
-      <div class="plan-list" data-type="mingguan"></div>
-      <div class="section-actions">
-        <button class="add-btn" data-type="mingguan">➕ Tambah Kegiatan</button>
-      </div>
-    </section>
+  <!-- Bagian Mingguan -->
+  <section id="mingguan">
+    <h2>📅 Rencana Mingguan</h2>
+    <div class="plan-list" data-type="mingguan"></div>
+    <button class="add-btn" data-type="mingguan">➕ Tambah Kegiatan</button>
+  </section>
 
-    <section id="bulanan" class="planner-section">
-      <h2>🗂️ Rencana Bulanan</h2>
-      <div class="plan-list" data-type="bulanan"></div>
-      <div class="section-actions">
-        <button class="add-btn" data-type="bulanan">➕ Tambah Kegiatan</button>
-      </div>
-    </section>
+  <!-- Bagian Bulanan -->
+  <section id="bulanan">
+    <h2>🗂️ Rencana Bulanan</h2>
+    <div class="plan-list" data-type="bulanan"></div>
+    <button class="add-btn" data-type="bulanan">➕ Tambah Kegiatan</button>
+  </section>
 
-    <section id="tahunan" class="planner-section">
-      <h2>🎯 Rencana Tahunan</h2>
-      <div class="plan-list" data-type="tahunan"></div>
-      <div class="section-actions">
-        <button class="add-btn" data-type="tahunan">➕ Tambah Kegiatan</button>
-      </div>
-    </section>
-  </main>
+  <!-- Bagian Tahunan -->
+  <section id="tahunan">
+    <h2>🎯 Rencana Tahunan</h2>
+    <div class="plan-list" data-type="tahunan"></div>
+    <button class="add-btn" data-type="tahunan">➕ Tambah Kegiatan</button>
+  </section>
 
-  <!-- Floating cute logo watermark (bottom-right) -->
-  <div class="logo-watermark" aria-hidden="true">
-    <img src="LOGO POSMAR.png" alt="POSMAR" />
-  </div>
-
-  <!-- Popup form (animated) -->
-  <div class="popup" id="popupForm" aria-hidden="true" role="dialog" aria-label="Form tambah kegiatan">
-    <div class="popup-card" role="document">
-      <button class="close-x" id="closePopup" aria-label="Tutup">✖</button>
+  <!-- Popup Form -->
+  <div class="popup" id="popupForm">
+    <div class="popup-content">
       <h3>Tambah Kegiatan Baru</h3>
-      <label>
-        <input type="text" id="namaKegiatan" placeholder="Nama kegiatan..." />
-      </label>
-      <label>
-        <input type="text" id="waktuKegiatan" placeholder="Tanggal / Bulan / Tahun..." />
-      </label>
-      <label>
-        <select id="statusKegiatan">
-          <option value="Terlaksana ✅">Terlaksana ✅</option>
-          <option value="Belum Terlaksana ❌">Belum Terlaksana ❌</option>
-        </select>
-      </label>
-
-      <div class="popup-row">
-        <button id="simpanKegiatan" class="primary">Simpan</button>
-        <button id="batalPopup" class="ghost">Batal</button>
+      <input type="text" id="namaKegiatan" placeholder="Nama kegiatan..." />
+      <input type="text" id="waktuKegiatan" placeholder="Tanggal / Bulan / Tahun..." />
+      <select id="statusKegiatan">
+        <option value="Terlaksana ✅">Terlaksana ✅</option>
+        <option value="Belum Terlaksana ❌">Belum Terlaksana ❌</option>
+      </select>
+      <div class="popup-buttons">
+        <button id="simpanKegiatan">Simpan</button>
+        <button id="batalPopup">Batal</button>
       </div>
     </div>
   </div>
 
-  <!-- Tiny toast -->
-  <div id="toast" class="toast" aria-live="polite" role="status"></div>
-
   <!-- Footer -->
-  <footer class="site-footer">
-    <p>Made with 💙 by  secre of P0SM4R 256 • OUR Plan's 25/26</p>
+  <footer>
+    <p>Made with 💙 by OSIS POSMAR | OUR Plan’s 2025</p>
+    <img src="LOGO POSMAR.png" class="logo-watermark" alt="Logo POSMAR kecil">
   </footer>
 
-  <!-- JS -->
+  <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
