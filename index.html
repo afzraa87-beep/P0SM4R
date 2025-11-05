@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>OUR Plan's | P0SM4R Planner</title>
+  <title>OUR Plan's | POSMAR</title>
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
     <rect width="100%" height="100%" fill="url(#g1)"></rect>
 
     <!-- soft cloud shapes -->
-    <g opacity="0.18" fill="#ffffff">
+    <g id="clouds" opacity="0.18" fill="#ffffff">
       <ellipse cx="12%" cy="18%" rx="140" ry="40"/>
       <ellipse cx="24%" cy="14%" rx="90" ry="30"/>
       <ellipse cx="78%" cy="12%" rx="120" ry="36"/>
@@ -41,14 +41,8 @@
   <!-- Header -->
   <header class="site-header">
     <div class="header-left">
-      <div class="logo-bubble" aria-hidden="true">
-        <!-- mini sticker-like icon -->
-        <svg width="56" height="56" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="32" cy="32" r="30" fill="#fff" />
-          <path d="M18 38c0-8 8-14 14-14s14 6 14 14" fill="#d0ecff"/>
-          <path d="M22 42h20v6H22z" fill="#3f8efc"/>
-        </svg>
-      </div>
+      <!-- LOGO POSMAR (use the provided PNG file in same folder) -->
+      <img src="LOGO POSMAR.png" alt="Logo POSMAR" class="logo-img" />
       <div>
         <h1>OUR Plan's <span class="tag-emo">🗓️</span></h1>
         <p class="subtitle">Rencana Kerja OSIS — Mingguan • Bulanan • Tahunan</p>
@@ -56,25 +50,29 @@
     </div>
 
     <div class="header-right">
-      <p class="motto">POSMAR BISA, <strong>POSMAR WANI</strong></p>
-      <!-- small character illustration -->
-      <div class="character" aria-hidden="true">
-        <svg viewBox="0 0 120 120" width="88" height="88" xmlns="http://www.w3.org/2000/svg">
-          <!-- body -->
+      <p class="motto">POSMAR BISA, <strong>POSMAR WANI 💙</strong></p>
+      <!-- small characters illustration (two kids) -->
+      <div class="characters" aria-hidden="true">
+        <!-- Girl -->
+        <svg class="kid kid-girl" viewBox="0 0 120 120" width="68" height="68" xmlns="http://www.w3.org/2000/svg">
           <ellipse cx="60" cy="78" rx="28" ry="18" fill="#fff"/>
-          <rect x="34" y="42" rx="12" ry="12" width="52" height="46" fill="#fef6d6"/>
-          <!-- face -->
-          <circle cx="60" cy="28" r="20" fill="#fff"/>
+          <rect x="34" y="42" rx="12" ry="12" width="52" height="46" fill="#fff3b8"/>
           <circle cx="60" cy="28" r="20" fill="#ffd" />
-          <!-- hair -->
-          <path d="M44 22 q16 -16 32 0" fill="#3f8efc"/>
-          <!-- eyes -->
+          <path d="M44 22 q16 -16 32 0" fill="#ffb6c1"/>
           <circle cx="52" cy="28" r="2.6" fill="#1b2a49"/>
           <circle cx="68" cy="28" r="2.6" fill="#1b2a49"/>
-          <!-- smile -->
-          <path d="M52 34 q8 6 16 0" stroke="#1b2a49" stroke-width="1.6" fill="none"/>
-          <!-- scarf -->
-          <rect x="46" y="38" width="28" height="6" rx="3" fill="#6ed79c"/>
+          <path d="M52 34 q8 6 16 0" stroke="#1b2a49" stroke-width="1.4" fill="none"/>
+        </svg>
+
+        <!-- Boy -->
+        <svg class="kid kid-boy" viewBox="0 0 120 120" width="68" height="68" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="60" cy="78" rx="28" ry="18" fill="#fff"/>
+          <rect x="34" y="42" rx="12" ry="12" width="52" height="46" fill="#dff2ff"/>
+          <circle cx="60" cy="28" r="20" fill="#ffd" />
+          <path d="M46 22 q14 -12 28 0" fill="#3f8efc"/>
+          <circle cx="52" cy="28" r="2.6" fill="#1b2a49"/>
+          <circle cx="68" cy="28" r="2.6" fill="#1b2a49"/>
+          <path d="M52 34 q8 5 16 0" stroke="#1b2a49" stroke-width="1.4" fill="none"/>
         </svg>
       </div>
     </div>
@@ -118,14 +116,9 @@
     </section>
   </main>
 
-  <!-- Floating cute sticker (bottom-right) -->
-  <div class="sticker" aria-hidden="true">
-    <svg viewBox="0 0 80 80" width="72" height="72">
-      <circle cx="40" cy="40" r="36" fill="#fff"/>
-      <path d="M24 46c6-8 18-8 24 0" stroke="#3f8efc" stroke-width="3" fill="none"/>
-      <circle cx="30" cy="34" r="3" fill="#1b2a49"/>
-      <circle cx="50" cy="34" r="3" fill="#1b2a49"/>
-    </svg>
+  <!-- Floating cute logo watermark (bottom-right) -->
+  <div class="logo-watermark" aria-hidden="true">
+    <img src="LOGO POSMAR.png" alt="POSMAR" />
   </div>
 
   <!-- Popup form (animated) -->
@@ -158,7 +151,7 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <p>Made with 💙 by secre of P0SM4R 256 • OUR Plan's 25/26</p>
+    <p>Made with 💙 by OSIS • OUR Plan's 2025</p>
   </footer>
 
   <!-- JS -->
