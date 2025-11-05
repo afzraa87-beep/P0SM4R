@@ -1,6 +1,3 @@
-/* -------------------------
-   Variables & base
-   ------------------------- */
 :root{
   --blue-1: #c8e7ff;
   --blue-2: #3f8efc;
@@ -31,6 +28,13 @@ body{
 .bg-decor{
   position:fixed;
   top:0; left:0; width:100%; height:40vh; z-index:-2;
+  pointer-events:none;
+  animation: floatClouds 18s linear infinite;
+}
+@keyframes floatClouds{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+  100%{transform:translateY(0)}
 }
 
 /* ------------- Header -------------- */
@@ -45,28 +49,35 @@ body{
   border-bottom-left-radius:28px;
   border-bottom-right-radius:28px;
   box-shadow: 0 6px 18px rgba(63,142,252,0.18);
+  position:relative;
+  overflow:visible;
 }
 
 .header-left{display:flex;gap:12px;align-items:center}
-.logo-bubble{width:56px;height:56px;border-radius:12px;background:rgba(255,255,255,0.16);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-soft)}
+.logo-img{width:64px;height:64px;object-fit:contain;border-radius:12px;background:rgba(255,255,255,0.08);padding:6px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
 .site-header h1{margin:0;font-size:1.34rem;letter-spacing:0.2px}
 .subtitle{margin:2px 0 0;font-size:0.88rem;opacity:0.95}
 
 /* right side */
 .header-right{text-align:right}
-.motto{margin:0;font-weight:600;font-size:0.98rem}
+.motto{margin:0;font-weight:700;font-size:0.98rem}
 .motto strong{color:var(--accent); padding:3px 6px;border-radius:8px;background:rgba(255,249,230,0.45)}
-.character{margin-top:6px}
+.characters{display:flex;gap:6px;justify-content:flex-end;align-items:center;margin-top:6px}
+
+/* kid animations */
+.kid{transition:transform .35s; transform-origin:center}
+.kid-girl:hover{transform:translateY(-6px) rotate(-3deg)}
+.kid-boy:hover{transform:translateY(-6px) rotate(3deg)}
 
 /* ------------- Nav -------------- */
-.site-nav{backdrop-filter: blur(6px); background: rgba(255,255,255,0.7); margin:12px auto; border-radius:12px; max-width:1000px; box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+.site-nav{backdrop-filter: blur(6px); background: rgba(255,255,255,0.8); margin:12px auto; border-radius:12px; max-width:1000px; box-shadow:0 6px 18px rgba(0,0,0,0.04)}
 .site-nav ul{display:flex;gap:12px;align-items:center;list-style:none;padding:10px 14px;margin:0;justify-content:center;flex-wrap:wrap}
 .site-nav a{color:var(--txt);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:10px;transition:all .18s}
 .site-nav a:hover{color:var(--blue-2);transform:translateY(-2px)}
 .site-nav .hint{margin-left:12px;color:#6b778f;font-weight:600;font-size:0.9rem}
 
 /* ------------- Main / Sections -------------- */
-main{max-width:980px;margin:18px auto;padding:0 16px 80px}
+main{max-width:980px;margin:18px auto;padding:0 16px 120px}
 .planner-section{background:transparent;padding:18px 12px;margin:10px 0;border-radius:12px}
 .planner-section h2{text-align:center;margin:0 0 12px;color:var(--blue-3)}
 
@@ -128,7 +139,7 @@ main{max-width:980px;margin:18px auto;padding:0 16px 80px}
 .popup{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(10,20,40,0.25);z-index:60;padding:18px}
 .popup[aria-hidden="false"]{display:flex}
 .popup-card{
-  width:100%;max-width:380px;background:white;border-radius:14px;padding:18px;box-shadow:0 20px 50px rgba(13,34,70,0.18);transform:translateY(18px) scale(.98);opacity:0;transition:all .28s cubic-bezier(.2,.9,.3,1);
+  width:100%;max-width:420px;background:white;border-radius:14px;padding:18px;box-shadow:0 20px 50px rgba(13,34,70,0.18);transform:translateY(18px) scale(.98);opacity:0;transition:all .28s cubic-bezier(.2,.9,.3,1);
 }
 .popup[aria-hidden="false"] .popup-card{transform:translateY(0) scale(1);opacity:1}
 
@@ -148,9 +159,13 @@ main{max-width:980px;margin:18px auto;padding:0 16px 80px}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:22px;background:#1b2a49;color:white;padding:8px 14px;border-radius:999px;opacity:0;pointer-events:none;transition:all .25s;z-index:80}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(-6px)}
 
+/* floating watermark logo */
+.logo-watermark{position:fixed;right:16px;bottom:16px;z-index:30;opacity:0.92;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.08));transition:transform .18s}
+.logo-watermark img{width:64px;height:64px;object-fit:contain;border-radius:12px;opacity:0.95}
+.logo-watermark:hover{transform:translateY(-8px)}
+
 /* floating sticker */
 .sticker{position:fixed;right:18px;bottom:18px;z-index:30;transform:translateY(0);transition:transform .25s}
-.sticker:hover{transform:translateY(-6px)}
 
 /* footer */
 .site-footer{text-align:center;padding:16px;color:#1b2a49;opacity:0.95;margin-top:22px}
@@ -161,4 +176,6 @@ main{max-width:980px;margin:18px auto;padding:0 16px 80px}
   .header-right{text-align:center}
   .site-nav ul{padding:8px}
   main{padding:0 12px}
+  .logo-img{width:56px;height:56px}
+  .logo-watermark img{width:52px;height:52px}
 }
