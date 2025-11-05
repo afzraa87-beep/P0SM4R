@@ -32,46 +32,40 @@
   <!-- Bagian Mingguan -->
   <section id="mingguan">
     <h2>📅 Rencana Mingguan</h2>
-    <div class="plan-list">
-      <div class="plan-item terlaksana">
-        <h3>Rapat OSIS</h3>
-        <p>Tanggal: 5 November 2025</p>
-        <p class="status">Terlaksana ✅</p>
-      </div>
-      <div class="plan-item belum">
-        <h3>Latihan Upacara</h3>
-        <p>Tanggal: 8 November 2025</p>
-        <p class="status">Belum Terlaksana ❌</p>
-      </div>
-    </div>
-    <button class="add-btn">➕ Tambah Kegiatan</button>
+    <div class="plan-list" data-type="mingguan"></div>
+    <button class="add-btn" data-type="mingguan">➕ Tambah Kegiatan</button>
   </section>
 
   <!-- Bagian Bulanan -->
   <section id="bulanan">
     <h2>🗂️ Rencana Bulanan</h2>
-    <div class="plan-list">
-      <div class="plan-item belum">
-        <h3>Bakti Sosial</h3>
-        <p>Bulan: November 2025</p>
-        <p class="status">Belum Terlaksana ❌</p>
-      </div>
-    </div>
-    <button class="add-btn">➕ Tambah Kegiatan</button>
+    <div class="plan-list" data-type="bulanan"></div>
+    <button class="add-btn" data-type="bulanan">➕ Tambah Kegiatan</button>
   </section>
 
   <!-- Bagian Tahunan -->
   <section id="tahunan">
     <h2>🎯 Rencana Tahunan</h2>
-    <div class="plan-list">
-      <div class="plan-item terlaksana">
-        <h3>LDKS (Latihan Dasar Kepemimpinan Siswa)</h3>
-        <p>Tahun: 2025</p>
-        <p class="status">Terlaksana ✅</p>
+    <div class="plan-list" data-type="tahunan"></div>
+    <button class="add-btn" data-type="tahunan">➕ Tambah Kegiatan</button>
+  </section>
+
+  <!-- Popup Form -->
+  <div class="popup" id="popupForm">
+    <div class="popup-content">
+      <h3>Tambah Kegiatan Baru</h3>
+      <input type="text" id="namaKegiatan" placeholder="Nama kegiatan..." />
+      <input type="text" id="waktuKegiatan" placeholder="Tanggal / Bulan / Tahun..." />
+      <select id="statusKegiatan">
+        <option value="Terlaksana ✅">Terlaksana ✅</option>
+        <option value="Belum Terlaksana ❌">Belum Terlaksana ❌</option>
+      </select>
+      <div class="popup-buttons">
+        <button id="simpanKegiatan">Simpan</button>
+        <button id="batalPopup">Batal</button>
       </div>
     </div>
-    <button class="add-btn">➕ Tambah Kegiatan</button>
-  </section>
+  </div>
 
   <!-- Footer -->
   <footer>
